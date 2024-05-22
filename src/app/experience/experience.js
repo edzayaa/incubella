@@ -127,7 +127,7 @@ window.onload = () => {
   //
 
   //COMPONENTES
-  const holoSphere = new HoloSphere(sphereCount, 18);
+  const holoSphere = new HoloSphere(sphereCount, 17);
   holoSphere.self.children[0].frustumCulled = false;
   holoSphere.self.children[1].frustumCulled = false;
   holoSphere.self.frustumCulled = false;
@@ -537,37 +537,19 @@ window.onload = () => {
     dots = {
       munity: {
         id: "munity",
-        span: "WHAT IS",
+        span: "ENTER",
         title: "MUNITY",
         link: new URL(
           "../experience/img/dot-icon/dot-icon__comunication.png",
           import.meta.url
         ).href,
       },
-      ntf: {
-        id: "ntf",
-        span: "PROOF OF </br>COMMUNITY",
-        title: "TOKENIZED</br> NFT ACCESS ",
+      file: {
+        id: "file",
+        span: "CIBER",
+        title: "PRIVACY & SECURITY",
         link: new URL(
-          "../experience/img/dot-icon/dot-icon__access.png",
-          import.meta.url
-        ).href,
-      },
-      chat: {
-        id: "chat",
-        span: "SECURE ENCRYPTED",
-        title: "LIVE-CHAT",
-        link: new URL(
-          "../experience/img/dot-icon/dot-icon__chat.png",
-          import.meta.url
-        ).href,
-      },
-      soon: {
-        id: "soon",
-        span: "COMMING",
-        title: "SOON",
-        link: new URL(
-          "../experience/img/dot-icon/dot-icon__soon.png",
+          "../experience/img/dot-icon/dot-icon__sharing.png",
           import.meta.url
         ).href,
       },
@@ -580,12 +562,31 @@ window.onload = () => {
           import.meta.url
         ).href,
       },
-      file: {
-        id: "file",
-        span: "EXCLUSIVE",
-        title: "FILE SHARING",
+      ntf: {
+        id: "ntf",
+        span: "PROOF OF COMMUNITY",
+        title: "ACCESS CARD",
         link: new URL(
-          "../experience/img/dot-icon/dot-icon__sharing.png",
+          "../experience/img/dot-icon/dot-icon__access.png",
+          import.meta.url
+        ).href,
+      },
+      chat: {
+        id: "chat",
+        span: "EVENT",
+        title: "COORDINATION",
+        link: new URL(
+          "../experience/img/dot-icon/dot-icon__chat.png",
+          import.meta.url
+        ).href,
+      },
+  
+      soon: {
+        id: "soon",
+        span: "SELF",
+        title: "GOVERNANCE",
+        link: new URL(
+          "../experience/img/dot-icon/dot-icon__soon.png",
           import.meta.url
         ).href,
       },
@@ -929,8 +930,8 @@ window.onload = () => {
 
     for (let index = 0; index < domItems.length; index++) {
       const angle = (Math.PI * 2 * index) / domItems.length; // Calcular el ángulo para esta iteración
-      const x = radio * Math.sin(angle);
-      const z = radio * Math.cos(angle);
+      const x = radio * Math.sin(angle - 2.63);
+      const z = radio * Math.cos(angle - 2.63);
 
       const position = new Vector3(x, 0, z);
       position.add(center); // Sumar el vector del centro para obtener la posición final

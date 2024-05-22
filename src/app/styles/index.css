@@ -586,7 +586,7 @@ canvas {
   margin-bottom: 30px;
 }
 .intro-container__sub-title h2{
-  width: 80%;
+  width: 140%;
   margin-bottom: 20px;
   text-align: left;
   color:  whitesmoke;
@@ -612,7 +612,7 @@ canvas {
 .control-panel__intro-btn {
   cursor: pointer;
   margin-right: 15px;
-  width: calc(100% / 2.5);
+  width: calc(100% / 1.8);
   height: 40px;
   border: none;
   border-radius: 1em;
@@ -641,7 +641,7 @@ canvas {
     rgba(0, 0, 0, 0) 90%
   );
   */
-  background-color: rgba(0, 118, 255, 0.5);
+  border:  solid rgb(0, 140, 255) 1px;
 }
 
 .control-panel__intro-btn--launch-app-btn {
@@ -650,6 +650,7 @@ canvas {
   /*background-image: url("../experience/img/intro-btn__launch-app.png");
   */
   border:  solid rgba(0, 118, 255, 0.5) 2px;
+  display: none;
 }
 .intro-btn__text {
   margin-right: 15px;
@@ -714,7 +715,7 @@ span.swiper-pagination-bullet {
 
 .content-page {
   display: flex;
-  font-size: 1.7em;
+  font-size: 1.8em;
   width: 160vw;
   height: 480px;
   max-width: 1920px;
