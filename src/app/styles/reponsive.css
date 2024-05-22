@@ -1,0 +1,244 @@
+/*FIRST SCREEN*/
+@import url(./index.css);
+
+
+@media only screen and (max-width: 650px) and (orientation: portrait) {
+  /* Estilos a aplicar cuando el ancho de la pantalla es menor que el alto */
+  /* Estilos para teléfonos móviles */
+  #sound-btn-bar {
+    height: 34px;
+    width: 40px;
+    margin: 0;
+    margin-right: -20px;
+    position: unset;
+
+  }
+
+  .content-page {
+    width: 160vw;
+    margin: 0;
+  }
+
+  .content-page__title {
+    font-size: 2.4em;
+    text-align: center;
+  }
+
+  .content-page__text {
+    font-size: calc(0.1em + 6vw);
+  }
+
+  .content-page__span-msg {
+    font-size: calc(0.1em + 6vw);
+  }
+
+  .load-screen__logo.navbar__logo {
+    position: absolute;
+    top: 4vh;
+
+  }
+
+  .navbar__logo {
+    position: unset;
+    height: 40px;
+    margin: 0;
+    width: 80px;
+  }
+
+  .navbar__back-btn {
+    position: unset;
+    margin-left: -20px;
+    height: 34px;
+    width: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../experience/img/back-btn-v2.png);
+  }
+
+  .action-container__start-btn {
+    width: calc(100vw / 1.7);
+    height: calc(100vw / 1.7);
+    max-width:  180px;
+    max-height: 180px
+  }
+  .action-container__start-btn .start-btn__text{
+    font-size: 0.9em;
+  }
+
+  .element-container{
+    backdrop-filter: blur(15px);
+    background-color: #3be8ff09;
+  }
+  .first-screen{
+    margin: 0;
+    padding: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+  }
+  .first-screen .intro-container__title h1{
+    text-align: center;
+  }
+  .first-screen .intro-container__sub-title h2 {
+    text-align: center;
+  }
+  .first-screen .first-screen__intro-container {
+    width: 100vw;
+    padding: 0;
+    padding-bottom: 10vh;
+    align-items: center;
+  }
+
+  .load-screen {
+    padding: 0;
+    position: unset;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .load-screen__span {
+    width: 50%;
+    bottom: 20px;
+  }
+
+  .intro-container__title h1 {
+    font-size: calc(1.2em + 5vw);
+    max-width: 100%;
+  }
+
+  .intro-container__sub-title{
+    display: grid;
+    place-items: center;
+  }
+  .intro-container__sub-title h2 {
+    font-size: 1em;
+  }
+
+  .intro-container__control-panel {
+    padding: 0;
+    height: 55px;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .content-page .control-panel__intro-btn {
+    height: fit-content;
+    padding: 15px 0;
+    font-size: calc(0.1em + 5.2 vw) !important;
+    width: calc(100% / 3);
+    margin: 10px 5px;
+  }
+
+  .content-page .intro-btn__text {
+    font-size: inherit;
+  }
+
+  .control-panel__intro-btn {
+    padding: 10px 0;
+    height: fit-content;
+    width: calc(100% / 2.7);
+  }
+
+  .intro-btn__text {
+    margin: 0;
+    font-size: calc(100vw / 25);
+  }
+
+  .intro-btn__icon {
+    background-size: contain;
+    padding: 0;
+  }
+
+  .footer {
+    justify-content: space-around;
+    padding: 0 15px;
+    transition: all .7s;
+  }
+
+  .footer #navigation-menu {
+    width: 80%;
+    max-width: 310px;
+  }
+  .navigation-menu__btn-container img{
+    height: 35px;
+  }
+
+  .footer__text {
+    width: 70vw;
+    text-align: center;
+    font-size: calc(0.1em + 2.6vw);
+  }
+
+  .footer__action-btn {
+    width: 31px;
+    height: 31px;
+    margin: 0;
+  }
+
+  .footer--sound-btn {
+    background-image: url("../experience/img/anim/movil-sound-btn.gif");
+  }
+
+  .footer--sound-btn.off {
+    background-image: url("../experience/img/anim/movil-sound-btn-off.png");
+  }
+
+  .element.active img {
+    width: 100px;
+  }
+
+  .element.active h2 {
+    font-size: 1.9em;
+  }
+
+  .element.active span {
+    font-size: 1.5em;
+  }
+
+  .footer__social {
+    width: calc(100vw / 3);
+  }
+
+  .credit {
+    position: unset;
+    font-size: calc(0.1em + 3vw);
+  }
+
+  .credit__back-btn {
+
+    width: 120px;
+    height: 10%;
+  }
+
+  .credit__item {
+    font-size: calc(0.1em + 4vw);
+    margin: 0 40px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .credit__more-info {
+    width: 90%;
+  }
+
+  .credit__footer {
+    bottom: calc(18px + 2vh);
+  }
+}
+
+
+/* Estilos para teléfonos móviles */
+
+@media only screen and (max-width: 375px) {
+  .content-page {
+    width: 190vw;
+  }
+
+  .content-page__text {
+    font-size: calc(0.1em + 8vw);
+  }
+
+  .btn-container__icon {
+    height: 42px;
+  }
+}

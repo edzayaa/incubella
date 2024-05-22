@@ -1,0 +1,46 @@
+{
+  "data": {
+    "munity": [
+      {
+        "id": "munity",
+        "title": "WHAT IS MUNITY?",
+        "content": "A platform designed for the creator and user experience. Community presence is taken to the next level as Munity continues exploring features that enhance limitless creation & exciting forms of engagement."
+      }
+    ],
+    "file": [
+      {
+        "id": "file",
+        "title": "CYBER PRIVACY & SECURITY",
+        "content": "Anonymity is a luxury. Interactions on Munity are private and secured with blockchain technology. Users logging on, accessing community features, engaging with accessible files, purchasing merchandise, and interacting with their community can rest assured that each aspect is authenticated against the blockchain and that every bit of data is private to the user."
+      }
+    ],
+    "word": [
+      {
+        "id": "word",
+        "title": "EXCLUSIVE FILE SHARING",
+        "content": "Creators looking to share content with their members face centralized entities; Munity uses blockchain technology to facilitate file sharing, token gated by access cards. Offering users a secure format for interacting with files and bringing creators a new form of monetization. Share exclusive files with holders in minutes."
+      }
+    ],
+    "ntf": [
+      {
+        "id": "ntf",
+        "title": "PROOF OF COMMUNITY ACCESS CARD",
+        "content": "Community’s face impersonation and users face solicitation. Munity user ownership & community validation by POC Access Card is ideal for creators of all interests. Empower community and user identity content with exclusive sets of Access Cards (NFTs). Keeping brands and users safe so they can enjoy the experience."
+      }
+    ],
+    "chat": [
+      {
+        "id": "chat",
+        "title": "EVENT COORDINATION",
+        "content": "Munity’s interactive features & blockchain infrastructure streamline any event creator's organization process. Audiences are kept engaged over multiple events, creators bring value to attendees in post-event ownership, and proof of attendance is always validated."
+      }
+    ],
+    "soon": [
+      {
+        "id": "soon",
+        "title": "SELF-GOVERNANCE",
+        "content": "Munity’s tokenized governance features empower community members to participate in decision-making. With transparent display of community proposals, voting results, and ongoing discussions, Munity fosters inclusivity and community governance."
+      }
+    ]
+  }
+}
