@@ -13,22 +13,25 @@
 <body>
   <header class="navbar">
     <div id="back-btn" class="navbar__back-btn deactive"></div>
-    <a href="#" id="navbar" class="navbar__logo deactive"></a>
-    <button id="sound-btn-bar" class="footer__action-btn footer--sound-btn deactive"></button>
+    <a href="?" id="navbar" class="navbar__logo deactive"></a>
+    <button id="sound-btn-bar" class="footer__action-btn footer--sound-btn QuadButton deactive">
+      <div class="navbar--sound-btn_Bars"></div>
+    </button>
   </header>
   <div id="footer" class="footer deactive">
     <button id="credit-btn" class="footer__action-btn footer--hide-footer-btn"></button>
     <div id="navigation-menu" class="deactive"></div>
     <span id="span-footer-text" class="footer__text">Discover token-gated communities</br> from your favorite creators around the world.</span>
-    <button id="sound-btn" class="footer__action-btn footer--sound-btn"></button>
+    <button id="sound-btn" class="footer__action-btn footer--sound-btn">
+      <div class="footer--sound-btn_Bars"></div>
+    </button>
   </div>
   <div id="root" class="root">
     <section id="first-screen" class="first-screen deactive">
       <div class="first-screen__intro-container">
         <div class="intro-container__title">
           <h1 id="main-title">
-            The Web3
-            Community</br>Platform
+            The Web3 Community Platform
           </h1>
         </div>
         <div class="intro-container__sub-title">
@@ -38,7 +41,7 @@
         </div>
         <div id="control-panel" class="intro-container__control-panel">
           <button id="features-btn" class="control-panel__intro-btn control-panel__intro-btn--features-btn">
-            <span class="intro-btn__text">Dive & Launch</span>
+            <span class="intro-btn__text">Dive</span>
             <div class="intro-btn__icon"></div>
           </button>
           <button id="launch-app-btn" class="control-panel__intro-btn control-panel__intro-btn--launch-app-btn">
@@ -50,11 +53,11 @@
     </section>
     <section id="load-screen" class="load-screen">
       <div class="load-screen__logo navbar__logo"></div>
-      <div id="no-audio-btn" class="load-screen__span">
+      <div id="no-audio-btn" class="load-screen__span d-none">
         CONTINUE WITHOUT AUDIO
       </div>
 
-      <div class="action-container">
+      <div class="action-container  ">
         <button id="start-btn" class="action-container__start-btn">
           <div class="start-btn__text">BEGIN</div>
           <div class="start-btn__icon"></div>
@@ -62,22 +65,21 @@
       </div>
     </section>
     <section id="credit" class="credit deactive">
-      <div class="credit__item credit__text">
-        <span class="text__span">Munity is for: </span>
-        <p id="typed" class="credit__description"></p>
+      <div class="credit__item credit__text credit__first">
+        <span class="">Munity is for: </span>
+        <p id="typed" class="credit__description text__span"></p>
       </div>
-      <div class="credit__item credit__more-info">
-        <div class="more-info__policy"><a href="#">Privacy Policy</a></div>
-        <div class="more-info__terms"><a href="#">Terms of service</a></div>
-      </div>
-      <div class="credit__item credit__text" style="text-align: center;">
+      
+      <div class="credit__item credit__text" style="text-align: center;  margin-top: -5px;">
 
-        <p class="credit__info"> </br>Create an authentic relationship with your community
-          </br>Empower yourself as a CREATOR
-          </br> Develop a new revenue stream
+        <p class="credit__info credit__second "> Create an <span class="text__span">AUTHENTIC</span> relationship with your community
+          </br>Empower yourself as a <span class="text__span">CREATOR</span>
+          </br> Develop a new revenue stream of <span class="text__span ">REVENUE</span>
         </p>
-        <span class="text__span">COPYRIGHT</span>
-        <p class="credit__info">© 2023 INCUBELLA. All Rights Reserved.</p>
+        <p class="credit__second_two">
+          <span class="text__span">COPYRIGHT</span>
+          <span class="credit__info">© 2023 Logiciel Munity Inc. All Rights Reserved.</span>
+        </p>
       </div>
 
       <div id="credit__back-btn" class="credit__item credit__back-btn"></div>
@@ -92,13 +94,20 @@
           </div>
         </div>
       </div>
-      <div class="credit__logo navbar__logo "></div>
+
+      <div class="credit__item credit__more-info">
+        <div class="more-info__policy"><a href="#">Privacy Policy</a></div>
+        <div class="more-info__terms"><a href="#">Terms of service</a></div>
+      </div>
+
+      <div class="credit__logo navbar__logo " id="creditLogo_"></div>
     </section>
   </div>
   <div id="cortain">
     <div class="cortain cortain__top"></div>
     <div class="cortain cortain__bottom"></div>
   </div>
+  <!--<div class="refeImg" style="background-image: url('Footer window.png');"></div>-->
   <!--
   <div id="main-span">
     <img src="./app/experience/img/logo.png" alt="Munity">

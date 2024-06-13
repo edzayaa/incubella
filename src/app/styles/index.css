@@ -51,7 +51,6 @@ canvas {
 
 }
 
-
 #renderer {
   transition: all 2.5s;
 }
@@ -82,8 +81,18 @@ canvas {
 
   
 
+.d-none{
+  display: none;
+}
 
-
+#munity,
+#file,
+#word,
+#ntf,
+#chat,
+#soon{
+  margin-bottom: 10vh;
+}
 
 .element {
   width: fit-content;
@@ -331,6 +340,25 @@ canvas {
     position: absolute;
     margin: 0;
     top: 20px;
+    animation: CreditMunity 1s ease-in forwards;
+}
+
+.CreditBackLogo{
+  animation: CreditMunity2 1s ease-in forwards;
+}
+
+.refeImg{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-size: contain;
+  background-position: center;
+  z-index: 500;
+  opacity: 0.25;
+  pointer-events: none;
+  background-repeat: no-repeat;
 }
 
 .navbar__back-btn {
@@ -341,7 +369,7 @@ canvas {
   z-index: 100;
   top: 15px;
   left: 25px;
-  background-image: url(../experience/img/back-btn-v2.png);
+  background-image: url(../experience/img/back.svg);
   background-size: contain;
   background-repeat: no-repeat;
   transition: all 0.5s;
@@ -379,20 +407,40 @@ canvas {
   font-family: az2;
   font-weight: 150;
   text-transform: uppercase;
+  font-size: 0.8rem;
 }
 .footer--hide-footer-btn {
   cursor: pointer;
   background-size: contain;
-  background-image: url("../experience/img/hide-footer-btn.png");
+  background-image: url("../experience/img/credit.svg");
   background-position: left;
 }
 .footer--sound-btn {
   transition: 0.6s ease;
   cursor: pointer;
-  background-image: url("../experience/img/anim/sound-btn.gif");
+  background-image: url("../experience/img/onSound.svg");
   background-position: right;
   position: relative;
 }
+
+.footer--sound-btn_off{
+  background-image: url("../experience/img/offSound.svg");
+}
+
+.footer--sound-btn_Bars{
+  position: absolute;
+  background-image: url("../experience/img/anim/soundBars.gif");
+  width: 27px;
+  height: 35px;
+  background-size: contain;
+  left: 50%;
+  top: 11%;
+}
+
+.footer--sound-btn_off .footer--sound-btn_Bars{
+  display: none;
+}
+
 .footer--sound-btn.min{
   height: 2px;
   transition: 0.6s ease;
@@ -452,7 +500,7 @@ canvas {
 }
 .load-screen__logo {
   position: absolute;
-  top: 25px;
+  top: 5vh;
   left: 50%;
   transform: translate(-50%, 0);
   margin: 0 !important;
@@ -481,6 +529,19 @@ canvas {
   cursor: pointer;
   animation: scales 5s infinite;
 }
+
+@keyframes CreditMunity {
+  0%{  top: 20px; }
+  70%{  top: 80px}
+  100%{  top: 60px}
+}
+
+@keyframes CreditMunity2 {
+  0%{  top: 60px; }
+  90%{  top: 10px}
+  100%{  top: 20px}
+}
+
 @keyframes focus {
   0%{  background: rgba(128, 128, 128, 0.1);}
   30%{  background: rgba(128, 128, 128, 0.12);}
@@ -581,16 +642,15 @@ canvas {
 .intro-container__title  h1{
   text-align:  left;
   font-weight: 600;
-  font-size: 4vw;
+  font-size: 2.8vw;
   line-height: 1.2;
-  margin-bottom: 30px;
 }
 .intro-container__sub-title h2{
   width: 140%;
   margin-bottom: 20px;
   text-align: left;
   color:  whitesmoke;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
 }
 .intro-container__control-panel {
   display: flex;
@@ -612,7 +672,7 @@ canvas {
 .control-panel__intro-btn {
   cursor: pointer;
   margin-right: 15px;
-  width: calc(100% / 1.8);
+  /*min-width: 27.5556%;*/
   height: 40px;
   border: none;
   border-radius: 1em;
@@ -642,6 +702,7 @@ canvas {
   );
   */
   border:  solid rgb(0, 140, 255) 1px;
+  background-color: #0076FFCC;
 }
 
 .control-panel__intro-btn--launch-app-btn {
@@ -650,7 +711,6 @@ canvas {
   /*background-image: url("../experience/img/intro-btn__launch-app.png");
   */
   border:  solid rgba(0, 118, 255, 0.5) 2px;
-  display: none;
 }
 .intro-btn__text {
   margin-right: 15px;
@@ -716,7 +776,7 @@ span.swiper-pagination-bullet {
 .content-page {
   display: flex;
   font-size: 1.8em;
-  width: 160vw;
+  width: 112vw;
   height: 480px;
   max-width: 1920px;
   opacity: 0;
@@ -732,6 +792,9 @@ span.swiper-pagination-bullet {
   width: 250px;
   height: 50px;
   border:  solid #0358badf 5px;
+  min-width: 180px;
+  margin-top: 31px !important;
+  /*display: none;*/
 }
 #ntf .content-page__title{
   width: 165vw;
@@ -746,6 +809,8 @@ span.swiper-pagination-bullet {
   line-height: 30px;
   font-weight: 200;
   margin-bottom: 0;
+  max-width: 89vw;
+  margin-top: 0px;
 }
 .content-page__span-msg {
   margin-top: 40px;
@@ -765,9 +830,9 @@ span.swiper-pagination-bullet {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
+  font-size: 1.25em;
   font-family: "az2";
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(90px);
   position: relative;
 }
 .credit__item {
@@ -777,6 +842,22 @@ span.swiper-pagination-bullet {
   width: fit-content;
   line-height: 1.5rem;
 }
+
+.credit__first{
+  line-height: 3rem;
+  margin-top: -32px;;
+  margin-bottom: -10px;
+}
+
+.credit__second{
+  line-height: 2.8rem;
+}
+
+.credit__second_two{
+  margin-top: 10px;
+}
+
+
 .text__span {
   color: #15eded;
 }
@@ -788,30 +869,43 @@ span.swiper-pagination-bullet {
 }
 
 .credit__more-info {
-  display: flex;
-  width: 30%;
-  justify-content: space-evenly;
-  align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    pointer-events: none;
 }
 .credit__more-info a{
   text-decoration: none;
   color: white !important;
+  font-weight: 100;
 }
 
 .more-info__policy {
+  position: absolute;
+  left: 5vw;
+  bottom: 8vh;
+  pointer-events: all;
 }
 .more-info__terms {
+  position: absolute;
+  right: 5vw;
+  bottom: 8vh;
+  pointer-events: all;
 }
 
 .credit__back-btn {
-  
-  width: 120px;
-  height: 70px;
   cursor: pointer;
   content: "back";
-  background-image: url("../experience/img/back-btn.png");
-  background-size: contain;
+  background-image: url("../experience/img/return_credits.svg");
   background-repeat: no-repeat;
+  background-size: contain;
+  width: 166px;
+  height: 70px;
+  position: absolute;
+  bottom: 18vh;
 }
 
 .credit__footer {

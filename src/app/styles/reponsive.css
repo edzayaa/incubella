@@ -10,13 +10,17 @@
     width: 40px;
     margin: 0;
     margin-right: -20px;
-    position: unset;
+    position: relative;
+  }
 
+  .footer--sound-btn_Bars{
+    display: none;
   }
 
   .content-page {
     width: 160vw;
     margin: 0;
+    margin-bottom: -124px !important;
   }
 
   .content-page__title {
@@ -26,16 +30,20 @@
 
   .content-page__text {
     font-size: calc(0.1em + 6vw);
+    max-width: 145vw;
   }
 
   .content-page__span-msg {
     font-size: calc(0.1em + 6vw);
+    max-width: 140vw;
   }
 
   .load-screen__logo.navbar__logo {
     position: absolute;
-    top: 4vh;
-
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1.5); 
+    margin: 0 !important;
   }
 
   .navbar__logo {
@@ -52,14 +60,14 @@
     width: 40px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(../experience/img/back-btn-v2.png);
+    background-image: url(../experience/img/mobile_back.svg);
   }
 
   .action-container__start-btn {
     width: calc(100vw / 1.7);
     height: calc(100vw / 1.7);
     max-width:  180px;
-    max-height: 180px
+    max-height: 180px;
   }
   .action-container__start-btn .start-btn__text{
     font-size: 0.9em;
@@ -81,6 +89,8 @@
   }
   .first-screen .intro-container__sub-title h2 {
     text-align: center;
+    max-width: 90vw;
+    margin-top: 1.5vh;
   }
   .first-screen .first-screen__intro-container {
     width: 100vw;
@@ -164,7 +174,7 @@
   }
 
   .footer__text {
-    width: 70vw;
+    width: 60vw;
     text-align: center;
     font-size: calc(0.1em + 2.6vw);
   }
@@ -183,6 +193,28 @@
     background-image: url("../experience/img/anim/movil-sound-btn-off.png");
   }
 
+  .footer--sound-btn.QuadButton {
+    background-image: url("../experience/img/mobile_button_sound_quad.svg");
+  }
+
+  .footer--sound-btn.off.QuadButton {
+    background-image: url("../experience/img/mobile_button_sound_quad_off.svg");
+  }
+
+  .navbar--sound-btn_Bars{
+    position: absolute;
+    background-image: url("../experience/img/anim/soundBars.gif");
+    width: 27px;
+    height: 35px;
+    background-size: contain;
+    left: 20%;
+    top: 11%;
+  }
+  
+  .off .navbar--sound-btn_Bars{
+    display: none;
+  }
+  
   .element.active img {
     width: 100px;
   }

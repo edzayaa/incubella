@@ -28,6 +28,7 @@ export class GalaxyParticles extends BaseParticle {
     this._hitPoint = new Vector2();
     this._raycastArea = null;
     this.isHover = 1;
+    this.ignoreMouse = false;
 
     this.arrayFrames = {
       start: [],
@@ -223,6 +224,7 @@ export class GalaxyParticles extends BaseParticle {
       this._mousePos.x = (event.clientX / window.innerWidth) * 2 - 1;
       this._mousePos.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
+      
       // Actualiza el raycaster con la posición del mouse
       this._raycaster.setFromCamera(this._mousePos, this._camera);
       //console.log(this._mousePos)
@@ -231,6 +233,9 @@ export class GalaxyParticles extends BaseParticle {
     window.addEventListener("pointermove", handleMouseMove);
   }
   update(time, props, delta) {
+
+    if(this.ignoreMouse) return;
+
     const hitPoint = rayCastUpdate(this._raycaster, this._raycastArea);
 
     // Ajuste de hitPoint

@@ -37,13 +37,25 @@ export class Item3D {
     this.geometry = new BufferGeometry();
     this.self = null;
     this.shaderMaterial = null;
+    this.ignoreMouse = false;
+
     this.speed = 0.5;
     this.createParticles(particleCount);
 
     this.allLoaded = false;
+    this.IsDeviceMobile = false;
 
-    if (window.innerWidth >= 500) {
-      this.self.position.set(0, 52, 0);
+    if(window.innerHeight > window.innerWidth)
+      {
+        const factorScale = window.innerHeight  / window.innerWidth;
+        if(factorScale >= 1.25)
+        {
+          this.IsDeviceMobile = true;
+        }
+      }
+
+    if (!this.IsDeviceMobile) {
+      this.self.position.set(0, 54, 0);
     }
     else{
       this.self.position.set(0, 58, 0);
@@ -237,6 +249,14 @@ export class Item3D {
 
         this.shaderMaterial.uniforms.u_mouse.value.x = mouse.x;
         this.shaderMaterial.uniforms.u_mouse.value.y = mouse.y;
+
+        if(this.ignoreMouse)
+        {
+            this.shaderMaterial.uniforms.u_mouse.value.x = 5000;
+            this.shaderMaterial.uniforms.u_mouse.value.y = 5000;
+        }
+
+        
         this.shaderMaterial.uniforms.u_mouse.needsUpdate = true;
       }
     }

@@ -56,13 +56,13 @@ window.onload = () => {
     1000
   );
 
-  const beginFocus = new Vector3(-40, 0, -20);
+  const beginFocus = new Vector3(-55, 0, -16);
   const beginPosition = new Vector3(-50, 100, 150);
 
   const primeraPantalla = new Vector3(0, 100, 100);
-  const segundaPantalla = new Vector3(0, 57, 57);
+  const segundaPantalla = new Vector3(0, 57, 57);//Vector3(0, 57, 57);
 
-  const movil_primeraPantalla = new Vector3(0, 220, 100);
+  const movil_primeraPantalla = new Vector3(0, 220, 150);
   const movil_segundaPantalla = new Vector3(0, 54, 63);
 
   const debugPantalla = new Vector3(0, 500, 500);
@@ -75,7 +75,7 @@ window.onload = () => {
 
   const CAM_MANAGER = new CameraManager(camera);
 
-  if (VIEWPORT_WIDTH >= 500) {
+  if (!isOneMobileVertical()) {
     CAM_MANAGER.container.position.copy(primeraPantalla);
     console.log("computadora >>", VIEWPORT_WIDTH);
   } else {
@@ -245,7 +245,7 @@ window.onload = () => {
   const viewAnimBack = animatePosition(target, primeraVista, 4200);
   let camAnimBack = null;
   let screenAnimBack = null;
-  if (VIEWPORT_WIDTH >= 500) {
+  if (!isOneMobileVertical()) {
     screenAnimBack = animatePosition(
       CAM_MANAGER.container.position,
       primeraPantalla,
@@ -351,6 +351,8 @@ window.onload = () => {
     FOOTER_TEXT.classList.remove("fade-in");
 
     isSecondScreen = false;
+    ITEM_3D.ignoreMouse=false;
+    //galaxyParticles.ignoreMouse=false;
     isPageActive = false;
 
     BACK_BTN.classList.remove("fade-in");
@@ -360,7 +362,7 @@ window.onload = () => {
   });
 
   const handlreClick = (event) => {
-    if (VIEWPORT_WIDTH >= 500) {
+    if (!isOneMobileVertical()) {
       //setup soud btn
       screenAnim = animatePosition(
         CAM_MANAGER.container.position,
@@ -386,6 +388,8 @@ window.onload = () => {
     isTravelling = true;
     isContenPage = true;
     isSecondScreen = true;
+    ITEM_3D.ignoreMouse=true;
+    //galaxyParticles.ignoreMouse=true;
     isPageActive = true;
 
     setTimeout(() => {
@@ -475,15 +479,21 @@ window.onload = () => {
       const FIRST_SCREEN = document.getElementById("first-screen");
       const ROOT = document.getElementById("root");
       const CREDIT = document.getElementById("credit");
+      const PrincipalLogo = document.getElementById("navbar");
+      const CreditLogo = document.getElementById("creditLogo_");
 
       try {
         ROOT.style.zIndex = "99";
       } catch {}
 
+      
       CREDIT.classList.remove("fade-in");
       CREDIT.classList.add("fade-out");
+      CreditLogo.classList.add("CreditBackLogo");
       console.log("ESTADO>>", FIRST_SCREEN_DISABLE);
       FIRST_SCREEN.classList.remove("fade-out");
+      PrincipalLogo.classList.remove("d-none");
+      PrincipalLogo.classList.add("fade-in");
 
       if (!FIRST_SCREEN_DISABLE) {
         FIRST_SCREEN.classList.add("fade-in");
@@ -493,12 +503,15 @@ window.onload = () => {
           //CREDIT.classList.add("deactive");
           FIRST_SCREEN.classList.remove("deactive");
           ROOT.classList.remove("fade-out");
+          
+          CreditLogo.classList.remove("CreditBackLogo");
         }, 1800);
       } else {
         console.log("AHORA EN HOME");
         setTimeout(() => {
           ROOT.classList.add("deactive");
           CREDIT.classList.add("deactive");
+          PrincipalLogo.classList.remove("d-none");
         }, 2300);
       }
     });
@@ -514,11 +527,14 @@ window.onload = () => {
       const FIRST_SCREEN = document.getElementById("first-screen");
       const ROOT = document.getElementById("root");
       const CREDIT = document.getElementById("credit");
+      const PrincipalLogo = document.getElementById("navbar");
+
       if (!isTyepo) {
         typeEffect();
         isTyepo = true;
       }
 
+      
       FIRST_SCREEN.classList.add("fade-out");
       setTimeout(() => {
         try {
@@ -529,6 +545,7 @@ window.onload = () => {
         CREDIT.classList.remove("deactive");
         CREDIT.classList.remove("fade-out");
         CREDIT.classList.add("fade-in");
+        PrincipalLogo.classList.add("d-none");
       }, 450);
     });
 
@@ -601,7 +618,7 @@ window.onload = () => {
 
     CONTENT_OBJ.scale.set(scale, scale, scale);
     ITEM_3D.setScale(8);
-    if (VIEWPORT_WIDTH >= 500) {
+    if (!isOneMobileVertical()) {
       CONTENT_OBJ.position.set(0, 38, 0);
     } else {
       CONTENT_OBJ.position.set(0, 44, 0);
@@ -712,9 +729,9 @@ window.onload = () => {
           FIRST_SCREEN.classList.remove("deactive");
           //
           NAVBAR.classList.remove("deactive");
-          FOOTER.classList.remove("deactive");
-
-          //
+          FOOTER.classList.remove("deactive"); 
+  
+          // 
           ROOT.classList.add("dark");
 
           //nPRIMERA PANTALLA
@@ -757,6 +774,7 @@ window.onload = () => {
     const START_BTN = document.getElementById("start-btn");
 
     if (!isSceneStarted) {
+      //activeScene();
       START_BTN.addEventListener("click", activeScene);
     }
 
@@ -917,7 +935,7 @@ window.onload = () => {
 
     //posicionar
     let radio = 0;
-    if (VIEWPORT_WIDTH >= 500) {
+    if (!isOneMobileVertical()) {
       radio = 30;
     } else {
       holoSphere.lightIntensity = 0.25;
@@ -939,6 +957,10 @@ window.onload = () => {
       domItems[index].position.copy(position);
       //domItems[index].rotation.x = Math.PI /-1.5
     }
+ 
+    domItems[2].position.x = domItems[0].position.x + 0.5;
+    domItems[3].position.x = domItems[5].position.x - 0.6;
+
 
     //SONIDO
 
@@ -948,7 +970,7 @@ window.onload = () => {
     //aux soudn btn
     // const SPAN_SOUND_nav = document.getElementById("sound-btn__span-nav");
 
-    if (VIEWPORT_WIDTH <= 500) {
+    if (isOneMobileVertical()) {
       BTN_SOUND_nav.addEventListener("mouseover", () => {
         playAudio(AUDIO.hoverEffect);
       });
@@ -985,14 +1007,14 @@ window.onload = () => {
 
       if (toggleSound) {
         console.log("ACTIVR SONIDO");
-        if (BTN_SOUND.classList.contains("off"))
-          BTN_SOUND.classList.remove("off");
+        if (BTN_SOUND.classList.contains("footer--sound-btn_off"))
+          BTN_SOUND.classList.remove("footer--sound-btn_off");
         toggleSound = !toggleSound;
         activateSound();
       } else {
         console.log("DESACTIVAR SONIDO");
         toggleSound = !toggleSound;
-        BTN_SOUND.classList.add("off");
+        BTN_SOUND.classList.add("footer--sound-btn_off");
         desactiveteSound();
       }
     });
@@ -1188,7 +1210,7 @@ window.onload = () => {
     let delta = Math.sign(event.deltaY);
 
     if (IS_SCROLLING) {
-      if (VIEWPORT_WIDTH <= 500) {
+      if (isOneMobileVertical()) {
         delta *= 10;
         console.log("scroll movil");
       }
@@ -1412,6 +1434,8 @@ sphereAnim.onUpdate(()=>{
 
     CAM_MANAGER.parallax = true;
     isSecondScreen = false;
+    ITEM_3D.ignoreMouse=false;
+    //galaxyParticles.ignoreMouse=false;
     isTravellingBack = false;
     CAM_MANAGER.isDisplayA = true;
     FOOTER_TEXT.classList.remove("deactive");
@@ -1501,3 +1525,44 @@ sphereAnim.onUpdate(()=>{
 
   //gloch effects
 };
+
+function isOneMobileVertical(){
+  const VIEWPORT_WIDTH = window.innerWidth;
+  const VIEWPORT_HEIGH = window.innerHeight;
+  
+
+  if(VIEWPORT_HEIGH > VIEWPORT_WIDTH)
+  {
+    const factorScale = VIEWPORT_HEIGH  / VIEWPORT_WIDTH;
+    if(factorScale >= 1.25)
+    {
+        return true;
+    }
+  }
+
+  if(AgentIsMobile)
+    return true;
+
+
+  return false;
+}
+
+var agentChecked = false;
+var AgentIsMobile = false;
+function isMobileDevice() {
+  if(agentChecked){
+
+    return AgentIsMobile;
+
+  }else{
+    console.log("checking agent!");
+
+    AgentIsMobile = /Mobi|Android/i.test(navigator.userAgent) || isOneMobileVertical();
+    agentChecked=true;
+
+    return AgentIsMobile;
+  }
+   
+}
+
+isMobileDevice();
