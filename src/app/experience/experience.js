@@ -239,6 +239,7 @@ window.onload = () => {
   }
   const BTN_SOUND_nav = document.getElementById("sound-btn-bar");
   const BTN_SOUND = document.getElementById("sound-btn");
+  const BTN_launch = document.getElementById("launch-app-btn");
   let isContenPage = false;
 
   const viewAnim = animatePosition(target, segundaVista, 4200);
@@ -289,7 +290,7 @@ window.onload = () => {
   const navHandleClick = (event) => {
     const tName = event.target.tagName;
     if (tName === "IMG") {
-      playAudio(AUDIO.clickEffect);
+      //playAudio(AUDIO.clickEffect);
     }
     const container = event.target.parentNode;
 
@@ -321,6 +322,11 @@ window.onload = () => {
   const BACK_BTN = document.getElementById("back-btn");
   let isTravelling = false;
   let isTravellingBack = false;
+
+  //
+  BTN_launch.addEventListener("click", () => {
+    window.open("https://app.munity.ai/", "_blank");
+  });
 
   BACK_BTN.addEventListener("click", () => {
     if (isTravelling) return;
@@ -475,7 +481,7 @@ window.onload = () => {
     });
     CREDIT_BACK_BTN.addEventListener("click", (event) => {
       //console.log(event.target);
-      playAudio(AUDIO.clickEffect);
+      //playAudio(AUDIO.clickEffect);
       const FIRST_SCREEN = document.getElementById("first-screen");
       const ROOT = document.getElementById("root");
       const CREDIT = document.getElementById("credit");
@@ -523,7 +529,7 @@ window.onload = () => {
     });
     let isTyepo = false;
     CREDIT_BTN.addEventListener("click", (event) => {
-      playAudio(AUDIO.clickEffect);
+      //playAudio(AUDIO.clickEffect);
       const FIRST_SCREEN = document.getElementById("first-screen");
       const ROOT = document.getElementById("root");
       const CREDIT = document.getElementById("credit");
@@ -695,7 +701,7 @@ window.onload = () => {
         CONTROL_PANEL.addEventListener("click", (event) => {
           const tName = event.target.tagName;
           if (tName === "SPAN" || tName === "BUTTON") {
-            playAudio(AUDIO.clickEffect, 0.25);
+            //playAudio(AUDIO.clickEffect, 0.25);
           }
         });
         //HOVER OPTIONS PANEL SOUND
@@ -976,7 +982,7 @@ window.onload = () => {
       });
 
       BTN_SOUND_nav.addEventListener("click", () => {
-        playAudio(AUDIO.clickEffect);
+        //playAudio(AUDIO.clickEffect);
 
         if (toggleSound) {
           console.log("ACTIVR SONIDO");
@@ -1003,7 +1009,7 @@ window.onload = () => {
     });
 
     BTN_SOUND.addEventListener("click", () => {
-      playAudio(AUDIO.clickEffect);
+      //playAudio(AUDIO.clickEffect);
 
       if (toggleSound) {
         console.log("ACTIVR SONIDO");

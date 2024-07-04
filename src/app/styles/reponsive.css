@@ -2,7 +2,7 @@
 @import url(./index.css);
 
 
-@media only screen and (max-width: 650px) and (orientation: portrait) {
+@media only screen and (orientation: portrait) {
   /* Estilos a aplicar cuando el ancho de la pantalla es menor que el alto */
   /* Estilos para teléfonos móviles */
   #sound-btn-bar {
@@ -20,7 +20,7 @@
   .content-page {
     width: 160vw;
     margin: 0;
-    margin-bottom: -124px !important;
+    margin-bottom: 17vh !important;
   }
 
   .content-page__title {
@@ -30,7 +30,7 @@
 
   .content-page__text {
     font-size: calc(0.1em + 6vw);
-    max-width: 145vw;
+    max-width: 273vw;
   }
 
   .content-page__span-msg {
@@ -247,18 +247,37 @@
     margin: 0 40px;
     margin-bottom: 15px;
     text-align: center;
+    line-height: calc(.1em + 4vw);
+  }
+
+  .credit__second {
+    line-height: calc(.1em + 4vw)
   }
 
   .credit__more-info {
     width: 90%;
   }
 
+  .credit__second_two{
+    line-height: calc(.1em + 4vw)
+  }
+
+  .more-info__policy,
+  .more-info__terms{
+    bottom: 5vh;
+  }
+
   .credit__footer {
-    bottom: calc(18px + 2vh);
+    bottom: calc(18px + 8vh);
   }
 }
 
-
+@media only screen and (min-width: 1080px) {
+  .content-page__text
+  {
+    max-width: 61%;
+  }
+}
 /* Estilos para teléfonos móviles */
 
 @media only screen and (max-width: 375px) {
