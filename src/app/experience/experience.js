@@ -477,7 +477,7 @@ window.onload = () => {
 
     const CREDIT_BACK_BTN = document.getElementById("credit__back-btn");
     CREDIT_BACK_BTN.addEventListener("mouseover", (event) => {
-      playAudio(AUDIO.hoverEffect);
+      ////playAudio(AUDIO.hoverEffect);
     });
     CREDIT_BACK_BTN.addEventListener("click", (event) => {
       //console.log(event.target);
@@ -525,7 +525,7 @@ window.onload = () => {
     //credisst btn
     const CREDIT_BTN = document.getElementById("credit-btn");
     CREDIT_BTN.addEventListener("mouseover", (event) => {
-      playAudio(AUDIO.hoverEffect);
+      //playAudio(AUDIO.hoverEffect);
     });
     let isTyepo = false;
     CREDIT_BTN.addEventListener("click", (event) => {
@@ -709,7 +709,7 @@ window.onload = () => {
           const tName = event.target.tagName;
           //console.log("HOVER", tName)
           if (tName === "BUTTON") {
-            playAudio(AUDIO.hoverEffect);
+            //playAudio(AUDIO.hoverEffect);
           }
         });
 
@@ -837,7 +837,7 @@ window.onload = () => {
         elementContainer.addEventListener("mouseover", (event) => {
           if (event.target.tagName !== "IMG") return;
           console.log("HOVER", event.target.tagName);
-          playAudio(AUDIO.hoverEffect);
+          //playAudio(AUDIO.hoverEffect);
           isHover = true;
           //if (VIEWPORT_WIDTH >= 500) mainSpan.classList.add("visible");
           actualItem = event.target.parentNode;
@@ -895,7 +895,7 @@ window.onload = () => {
     NAV_MENU_REF.addEventListener("mouseover", (event) => {
       const tName = event.target.tagName;
       if (tName === "IMG") {
-        playAudio(AUDIO.hoverEffect);
+        //playAudio(AUDIO.hoverEffect);
       }
     });
     /*END CREATE DOTS*/
@@ -978,7 +978,7 @@ window.onload = () => {
 
     if (isOneMobileVertical()) {
       BTN_SOUND_nav.addEventListener("mouseover", () => {
-        playAudio(AUDIO.hoverEffect);
+        //playAudio(AUDIO.hoverEffect);
       });
 
       BTN_SOUND_nav.addEventListener("click", () => {
@@ -1005,7 +1005,7 @@ window.onload = () => {
 
     //activar desactivar sonido
     BTN_SOUND.addEventListener("mouseover", () => {
-      playAudio(AUDIO.hoverEffect);
+      //playAudio(AUDIO.hoverEffect);
     });
 
     BTN_SOUND.addEventListener("click", () => {
